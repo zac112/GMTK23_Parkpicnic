@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dor8v6u6yrxy5"]
+
+[ext_resource type="Texture2D" uid="uid://c4abbww6688yk" path="res://Assets/Sprites/fire.png" id="1_jaybl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjr4f"]
+atlas = ExtResource("1_jaybl")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_paqcg"]
+atlas = ExtResource("1_jaybl")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sbi8e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjr4f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_paqcg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Fire" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_sbi8e")
+autoplay = "default"

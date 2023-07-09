@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bimge4s2vfm6b"]
+
+[ext_resource type="PackedScene" uid="uid://dor8v6u6yrxy5" path="res://Assets/Prefabs/fire.tscn" id="1_ttkx1"]
+[ext_resource type="Texture2D" uid="uid://d0vjtrgrceu2t" path="res://Assets/Sprites/Tree2.png" id="1_vkeqw"]
+[ext_resource type="Script" path="res://Assets/Scripts/Tree.gd" id="3_cls1a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jttij"]
+size = Vector2(7.66667, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvqi0"]
+size = Vector2(20, 24.3333)
+
+[node name="Area2D" type="StaticBody2D"]
+scale = Vector2(3, 3)
+
+[node name="Fire" parent="." instance=ExtResource("1_ttkx1")]
+visible = false
+z_index = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.33333, 19)
+shape = SubResource("RectangleShape2D_jttij")
+
+[node name="Tree2" type="Sprite2D" parent="."]
+z_index = 1
+texture = ExtResource("1_vkeqw")
+
+[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("fire")]
+script = ExtResource("3_cls1a")
+fire = NodePath("../Fire")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.666667, 11.5)
+shape = SubResource("RectangleShape2D_vvqi0")
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

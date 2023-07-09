@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ckcmicocilqcd"
+path="res://.godot/imported/Whoosh Hit Transition Cinematic Synth-003.wav-b5e97446dc46c79e79c45fab296d2c75.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Whoosh Hit Transition Cinematic Synth-003.wav"
+dest_files=["res://.godot/imported/Whoosh Hit Transition Cinematic Synth-003.wav-b5e97446dc46c79e79c45fab296d2c75.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

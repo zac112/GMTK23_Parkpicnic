@@ -1,0 +1,77 @@
+[gd_scene load_steps=15 format=3 uid="uid://bjqho8rfttv0l"]
+
+[ext_resource type="Texture2D" uid="uid://bc50v2q2a7on6" path="res://Assets/Sprites/Fight.png" id="1_yfk4o"]
+[ext_resource type="Script" path="res://Assets/Scripts/fight.gd" id="2_b2svp"]
+[ext_resource type="AudioStream" uid="uid://6mch681x4cwv" path="res://Assets/Sounds/BuckLazer_Burst_02.wav" id="3_g3lxl"]
+[ext_resource type="AudioStream" uid="uid://jruirhw7s70l" path="res://Assets/Sounds/ChargeLazer_Burst_02.wav" id="4_btoql"]
+[ext_resource type="AudioStream" uid="uid://bgiflgm7kt42c" path="res://Assets/Sounds/DigitalBullets_Burst_01.wav" id="5_b1qlf"]
+[ext_resource type="AudioStream" uid="uid://dwec2tau5ojya" path="res://Assets/Sounds/GlitchGun_Burst_02.wav" id="6_35qn2"]
+[ext_resource type="AudioStream" uid="uid://b60k77fe5kwg0" path="res://Assets/Sounds/PlasmaMachineGun_Burst_Dry_01.wav" id="7_20rhb"]
+[ext_resource type="AudioStream" uid="uid://bd7ubdaptb7ml" path="res://Assets/Sounds/PlasmaMachineGun_Burst_Dry_02.wav" id="8_2tgij"]
+[ext_resource type="AudioStream" uid="uid://dra5ogd45gyt4" path="res://Assets/Sounds/PlasmaMachineGun_Burst_Hangar_01.wav" id="9_c2r6w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntx43"]
+atlas = ExtResource("1_yfk4o")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbo7r"]
+atlas = ExtResource("1_yfk4o")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekk3i"]
+atlas = ExtResource("1_yfk4o")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83sa7"]
+atlas = ExtResource("1_yfk4o")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iqa6i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntx43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbo7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekk3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83sa7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Fight" type="AnimatedSprite2D"]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_iqa6i")
+autoplay = "default"
+frame_progress = 0.597036
+script = ExtResource("2_b2svp")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_g3lxl")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_btoql")
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_b1qlf")
+
+[node name="AudioStreamPlayer2D4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_35qn2")
+
+[node name="AudioStreamPlayer2D5" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_20rhb")
+
+[node name="AudioStreamPlayer2D6" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_2tgij")
+
+[node name="AudioStreamPlayer2D7" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_c2r6w")
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

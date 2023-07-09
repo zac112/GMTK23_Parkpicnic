@@ -1,0 +1,79 @@
+[gd_scene load_steps=13 format=3 uid="uid://dtgrf1ot2r58d"]
+
+[ext_resource type="Texture2D" uid="uid://doiq5ng6vvynp" path="res://Assets/Sprites/portalSpawn.png" id="1_i8otq"]
+[ext_resource type="Texture2D" uid="uid://b02n4soks811r" path="res://Assets/Sprites/portalConstant.png" id="1_u31dm"]
+[ext_resource type="Script" path="res://Assets/Scripts/portal_spawn.gd" id="3_yyc6a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1m4e3"]
+atlas = ExtResource("1_u31dm")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86sun"]
+atlas = ExtResource("1_u31dm")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agl7o"]
+atlas = ExtResource("1_u31dm")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2fbx"]
+atlas = ExtResource("1_i8otq")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4mvc"]
+atlas = ExtResource("1_i8otq")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2oild"]
+atlas = ExtResource("1_i8otq")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xv0vb"]
+atlas = ExtResource("1_i8otq")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sa3nj"]
+atlas = ExtResource("1_i8otq")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bqerq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1m4e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86sun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agl7o")
+}],
+"loop": true,
+"name": &"constant",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2fbx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4mvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2oild")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xv0vb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sa3nj")
+}],
+"loop": true,
+"name": &"spawn",
+"speed": 5.0
+}]
+
+[node name="PortalSpawn" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_bqerq")
+animation = &"spawn"
+script = ExtResource("3_yyc6a")
